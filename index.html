@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Glenn Maxwell</title></head>
+    <body>
+        <p id="maxwell"></p>
+        <p id="demo"></p>
+        <p id="rabada"></p>
+        <p id="gayle"></p>
+        <script>
+        var myobj ={name:"Jawad",age:16,profession:"Student"};
+        var myjson =JSON.stringify(myobj);
+        var newjson = JSON.parse(myjson);
+        document.getElementById("maxwell").innerHTML=newjson.profession;
+
+
+        let myPromise= new Promise(function(myResolve,myreject)
+            {
+                setTimeout(function(){
+                    myResolve("Maxwell");},5000);
+                });
+                myResolve();//when successful
+                myreject();//when error
+        
+                myPromise.then(function(value){
+                    document.getElementById("rabada").innerHTML=value;
+                },
+            
+                function(error){
+            }
+            
+            )
+
+    //other
+
+
+
+    function myDisplayer(some) {
+
+document.getElementById("demo").innerHTML = some;
+
+}
+
+function sum(a,b){
+
+var sum = a + b;
+
+myDisplayer(sum);
+
+}
+
+let myPromise1 = new Promise(function(myResolve, myReject) {
+
+// producing code may take some time
+
+let x = 0; // some code (try to change x to 5)
+
+
+if (x == 0) {
+
+myResolve ("OK"); // when successfull
+
+} else {
+
+myReject("Error"); // when error
+
+}
+
+});
+
+// consuming code - must wait for fullfilled promise
+
+myPromise.then(
+
+function(value) {sum(5,5);}, // code is successfull
+
+function(error) {sum(error);} // code is error
+
+);
+
+
+
+//other
+
+
+
+async function add(a,b){
+    let response = await a+b;
+    display(reponse);
+}
+function display(some){
+    document.getElementById("gayle").innerHTML=some;
+}
+add(5,20);
+    </script>
+    </body>
+</html>
